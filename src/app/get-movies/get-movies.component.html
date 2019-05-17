@@ -1,0 +1,12 @@
+<div id="all-movies" class="movies-side-bar clearfix">
+    <h2 class="text-center">{{ title }}</h2>
+    <a title="{{movies.original_title}}" routerLink="/movie/{{movies.id}}" class="col-md-1 outerMovie text-center" *ngFor="let movies of movies?.results">
+        <div class="innerMovie">
+            <h2>
+                <span class="text-primary text-bold">{{movies.original_title}}</span>
+                <p class="text-secondary">{{ movies.title }}</p>
+            </h2>
+            <div class="movieImageDiv center-block" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w500' + movies.poster_path + ')'}"></div>
+        </div>
+    </a>
+</div>

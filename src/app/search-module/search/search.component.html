@@ -1,0 +1,8 @@
+<div class="search-part pull-right">
+    <input placeholder="search" #searchBox class="color-grey" id="search-box" (input)="search(searchBox.value)" />
+    <ul *ngIf="movies" class="search-result">
+        <li class="color-grey" *ngFor="let movie of movies?.results">
+            {{movie.name}}
+        </li>
+    </ul>
+</div>

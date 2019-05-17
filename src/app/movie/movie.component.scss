@@ -1,0 +1,29 @@
+#single-movie {
+    .movieImageDiv {
+        width: 290px;
+        height: 440px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    h2 {
+        border-bottom: 2px solid grey;
+    }
+    h2 .grey-color {
+        font-size: 18px;
+        position: relative;
+        top: -6px;
+    }
+    .movie-overview {
+        margin-top: 15px;
+    }
+    .additional-info {
+        margin-top: 10px;
+        span:first-of-type {
+            font-size: 14px;
+        }
+    }
+    .additional-info p {
+        margin: 10px 0;
+    }
+}
