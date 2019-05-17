@@ -18,7 +18,7 @@ export class GetMoviesComponent implements OnInit {
     this.GetMoviesService.getMovies(this.type)
     .subscribe(movies => {
       this.movies = movies;
-      console.log(this.movies);
+      // console.log(this.movies);
     });
   }
   

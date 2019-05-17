@@ -12,6 +12,8 @@ import { GetMoviesComponent } from './get-movies/get-movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchModule } from './search-module/search.module';
+// import { UserModule } from './user-module/user.module';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { SearchModule } from './search-module/search.module';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    SearchModule
+    SearchModule,
+    // UserModule
   ],
   providers: [
     // GetMoviesService

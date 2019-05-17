@@ -11,24 +11,24 @@ import { GetMoviesService } from '../../app/get-movies.service';
 })
 
 export class MovieComponent implements OnInit {
-  
+
   constructor(
     private GetMoviesService: GetMoviesService,
     private router: Router,
     private route: ActivatedRoute,
-    ) {
-      this.id = + this.route.snapshot.paramMap.get('id');
-     }
+  ) {
+    this.id = + this.route.snapshot.paramMap.get('id');
+  }
 
   movie: SingleMovie<Object>;
   id: number;
 
   getMovie() {
     this.GetMoviesService.getMovie(this.id)
-    .subscribe(movie => {
-      this.movie = movie;
-      console.log(this.movie);
-    });
+      .subscribe(movie => {
+        this.movie = movie;
+        // console.log(this.movie);
+      });
   }
 
   ngOnInit() {

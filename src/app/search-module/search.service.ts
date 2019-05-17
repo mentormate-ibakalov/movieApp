@@ -12,7 +12,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class SearchService {
 
   constructor(private http: HttpClient) { }
-  private apis: Object = APIS;;
+  private apis: Object = APIS;
+  movies$:Observable<object>;
+
 
   searchMovies(term: string): Observable<Movies<Object>> {
     if (!term.trim()) {
@@ -28,6 +30,13 @@ export class SearchService {
       );
 
   }
+
+  passSearchData(movies: Observable<object>): void {
+    this.movies$ = movies;
+    this.movies$.subscribe(s => console.log(s))
+  }
+
+
   private handleError<T>(operation = 'operation', result?: any) {
     return (error: any): Observable<any> => {
 

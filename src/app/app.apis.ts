@@ -7,9 +7,6 @@ export const APIS: Object = {
         'upcoming-movies': '/3/movie/upcoming',
         'now-playing-movies': '/3/movie/now_playing',
         'single-movie': '/3/movie',
-        'search-movie': '/3/search/company'
+        'search-movie': '/3/search/movie'
     }
 }
-
-
-// https://api.themoviedb.org/3/search/company?api_key=c0d3a72ba266c69461f962633c4f8be3&query=ave&page=1
