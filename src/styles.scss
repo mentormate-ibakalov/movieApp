@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap.min";
+// @import '~bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 @mixin transition($args...) {
     -webkit-transition: $args;
@@ -30,6 +31,16 @@ li {
 
 h1 {
     padding-top: 20px;
+}
+
+.movie-btns button {
+    background: #ccc;
+    border: none;
+    padding: 7px;
+    /* border-radius: 7px; */
+    width: 100%;
+    margin: 5px auto;
+    display: block;
 }
 
 .grey-color {
