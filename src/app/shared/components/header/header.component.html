@@ -1,0 +1,27 @@
+<header class="clearfix">
+    <div class="mentor-center">
+        <a class="logo-part col-md-2" routerLink="/">
+            <img src="assets/img/logo.svg" alt="img">
+        </a>
+        <!-- user-detail -->
+        <div class="link-part col-md-10">
+            <app-search (emitToHeader)="searchMovies($event)"></app-search>
+            <div class="userPart pull-right">
+                <div *ngIf="isLoggedIn; else loggedOut">
+                    <div class="loggedIn">
+                        <span class="menu-links text-uppercase text-center text-primary">HI, I.Bakalov</span>
+                        <img src="https://img.icons8.com/bubbles/48/000000/user.png" alt="user pic">
+                        <ul>
+                            <li><a class="menu-links text-uppercase" routerLink="{{siteUrls['user-details']}}">User details</a></li>
+                            <li><a class="menu-links text-uppercase" routerLink="{{siteUrls['user-favorite-movies']}}">favorite movies</a></li>
+                            <li><a class="menu-links text-uppercase" (click)="logout()">logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ng-template #loggedOut>
+                    <a class="menu-links text-uppercase text-center text-bold text-primaryr" routerLink="{{siteUrls['user-login']}}">login</a>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</header>

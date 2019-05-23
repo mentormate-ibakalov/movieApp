@@ -1,0 +1,47 @@
+header {
+    padding: 10px 0;
+    border-bottom: 1px solid grey;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 100;
+    a img {
+        width: 50px;
+    }
+    .link-part .menu-links {
+        line-height: 42px;
+    }
+    .userPart {
+        margin-right: 15px;
+    }
+    .loggedIn {
+        position: relative;
+        cursor: pointer;
+    }
+    .loggedIn ul {
+        display: none;
+        position: absolute;
+        background: whitesmoke;
+        // padding: 10px;
+    }
+    .loggedIn:hover ul {
+        display: block;
+    }
+    .loggedIn li {
+        list-style-type: none;
+    }
+    .loggedIn li a {
+        border-bottom: 1px solid gray;
+        color: gray;
+        // background: rebeccapurple;
+        line-height: 40px;
+        padding: 0 8px;
+        display: block;
+        cursor: pointer;
+    }
+    .loggedIn li a:hover {
+        background: gray;
+        color: whitesmoke;
+        text-decoration: none;
+    }
+}

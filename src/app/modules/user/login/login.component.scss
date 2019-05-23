@@ -1,0 +1,42 @@
+#loginForm {
+    .requ {
+        cursor: pointer;
+    }
+    .innerLoginForm {
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(204, 204, 204, 0.2);
+        padding: 50px 10px;
+        border-radius: 17px;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    .fourm-group {
+        margin: 25px 0;
+        position: relative;
+    }
+    button {
+        background: #ccc;
+        border: none;
+        padding: 7px;
+        // border-radius: 7px;
+        width: 150px;
+        margin: 0 auto;
+        display: block;
+    }
+    input {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 20px 0;
+    }
+    .required {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+    }
+}

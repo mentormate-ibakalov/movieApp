@@ -1,0 +1,22 @@
+<form autocomplete="off" [formGroup]="loginForm" id="loginForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
+    <div class="innerLoginForm">
+        <h2 class="text-uppercase text-center text-bold text-primary">Login</h2>
+        <div class="mentor-center">
+            <div class="fourm-group">
+                <!-- <label>username</label> -->
+                <span class="required text-danger" *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched  || mouseOverLogin)">required</span>
+                <input formControlName="userName" class="form-control" type="text" id="user-name" placeholder="username ..." required>
+            </div>
+            <div class="fourm-group">
+                <!-- <label>password</label> -->
+                <span class="required text-danger" *ngIf="loginForm.controls.userPass?.invalid && ( loginForm.controls.userPass?.touched   || mouseOverLogin)">required</span>
+                <input formControlName="userPass" class="form-control" type="password" id="user-pass" placeholder="password ..." required>
+            </div>
+        </div>
+        <div class="fourm-group">
+            <span (mouseenter)="mouseOverLogin = true" (mouseleave)="mouseOverLogin = false">
+        <button [disabled]="loginForm.invalid" class="button-primary requ" type="submit">Submit</button>
+        </span>
+        </div>
+    </div>
+</form>
