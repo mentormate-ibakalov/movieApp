@@ -1,6 +1,6 @@
 export const SITEURLS: Object = {
     'base': '/',
-    'single-movie': '/movie/',
+    'single-movie': '/category/',
     'category-movie': '/movies/category/',
     'user-login': '/user/login/',
     'user-details': '/user/details/',

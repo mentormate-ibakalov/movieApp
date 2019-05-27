@@ -1,8 +1,8 @@
+import { HomeComponent } from '@shared/components/home/home.component';
+import { GetMoviesComponent } from '@shared/components/get-movies/get-movies.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule, RoutingComponents } from '../app-routing.module';
-import { MovieCategoriesModule } from '@modules/movies-categories/movies-categories.module';
-import { MoviesDisplayModule } from '@modules/movies-display/movies-display.module';
+import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from '@shared/components/header/header.component';
@@ -10,7 +10,7 @@ import { SearchComponent } from '@shared/components/search/search.component';
 import { SearchResultComponent } from '@shared/components/search-result/search-result.component';
 import { MessageComponent } from '@shared/components/message/message.component';
 import { MessageAnimationDirective } from '@shared/directives/message-animation.directive';
-
+import { KebapTopNormalPipe } from '@shared/pipes/kebap-top-normal.pipe';
 
 
 @NgModule({
@@ -20,26 +20,30 @@ import { MessageAnimationDirective } from '@shared/directives/message-animation.
     SearchResultComponent,
     MessageAnimationDirective,
     MessageComponent,
-    RoutingComponents
+    GetMoviesComponent,
+    HomeComponent,
+    KebapTopNormalPipe
+    // KebapTopNormalPipe
   ],
+
   imports: [
     CommonModule,
-    MoviesDisplayModule,
-    MovieCategoriesModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
+  
   exports: [
-    // MoviesDisplayModule,
-    // MovieCategoriesModule,
+    // KebapTopNormalPipe,
+    GetMoviesComponent,
     HeaderComponent,
     SearchComponent,
     SearchResultComponent,
     MessageComponent,
     MessageAnimationDirective,
     AppRoutingModule,
-    RoutingComponents
+    KebapTopNormalPipe,
+    HomeComponent
   ],
 })
 

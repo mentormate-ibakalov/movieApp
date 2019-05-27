@@ -18,6 +18,7 @@ class Results {
 
 export class Movies<Object> {
     "page": number;
+    "title"?: string;
     "total_results": number;
     "total_pages": number;
     "results": Results[];

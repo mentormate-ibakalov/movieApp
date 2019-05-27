@@ -1,6 +1,7 @@
 <div class="search-part pull-right">
-    <input placeholder="search" #searchBox class="color-grey" id="search-box" (input)="search(searchBox.value)" />
-    <ul class="search-result">
+    {{showList}}
+    <input placeholder="search" #searchBox class="color-grey" id="search-box" (blur)="showList = true" (input)="search(searchBox.value)" />
+    <ul [hidden]="!showList" class="search-result">
         <li class="color-grey" *ngFor="let movie of (movies$ | async)?.results">
             <a title="{{movie.original_title}}" routerLink="{{siteUrls['single-movie'] + movie.id}}">
             {{movie.title}}

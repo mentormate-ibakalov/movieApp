@@ -25,7 +25,6 @@ export class MessageService {
     else return this.log('super', 'success');
   }
 
-
   public handleError(err?: any): any {
     if (err.hasOwnProperty('error')) return this.log(err.error, 'error')
     else if ( typeof err == 'string')  return this.log(err, 'error')

@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class AuthService {
-  constructor(private http: HttpClient, private MessageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { }
   checkLogIn = new BehaviorSubject<boolean>(false);
   currentLoginStatus = this.checkLogIn.asObservable();
 
