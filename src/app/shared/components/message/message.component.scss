@@ -1,0 +1,57 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+#message {
+    position: fixed;
+    padding: 12px;
+    top: 150px;
+    min-width: 200px;
+    border-radius: 5px;
+    left: -100%;
+    @include transition(all .4s ease);
+    animation: letOut 0.9s forwards;
+}
+
+#message.success {
+    background: rgba(55, 182, 69, 0.48);
+    color: darkgreen;
+}
+
+#message.error {
+    background: rgba(171, 31, 45, 0.5);
+    color: darkred;
+}
+
+#message.letIn {
+    animation: letIn 0.9s forwards;
+}
+
+// ANIMATION
+@keyframes letIn {
+    0% {
+        left: -100%;
+    }
+    72% {
+        left: 2%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes letOut {
+    0% {
+        left: 0%;
+    }
+    25% {
+        left: 2%;
+    }
+    100% {
+        left: -100%;
+    }
+}

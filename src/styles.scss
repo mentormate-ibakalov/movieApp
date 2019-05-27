@@ -1,0 +1,127 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap.min";
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+a,
+input,
+button,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    box-sizing: Border-box
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+.movie-btns button {
+    background: #ccc;
+    border: none;
+    padding: 7px;
+    /* border-radius: 7px; */
+    width: 100%;
+    margin: 5px auto;
+    display: block;
+}
+
+.grey-color {
+    color: grey;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+.text-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.text-light {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.text-normal {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+.mentor-center {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    display: block;
+}
+
+.movies-side-bar {
+    padding: 20px 0;
+}
+
+.outerMovie {
+    margin: 20px 0;
+    @include transition(all .4s ease);
+}
+
+.outerMovie:hover {
+    -webkit-box-shadow: 19px 25px 18px -15px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 19px 25px 18px -15px rgba(0, 0, 0, 0.31);
+    box-shadow: 19px 25px 18px -15px rgba(0, 0, 0, 0.31);
+}
+
+#main-part {
+    padding-top: 100px;
+}
+
+.innerMovie {
+    img {
+        width: 80%;
+    }
+    h2 {
+        padding: 20px 0 5px 0;
+        font-size: 15px;
+    }
+    h2 p {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    h2 p,
+    h2 span {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    h2.single-line-title {
+        padding: 30px 0;
+    }
+    .movieImageDiv {
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 120px;
+        height: 200px;
+        background-position: center;
+    }
+}

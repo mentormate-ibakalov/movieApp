@@ -1,0 +1,28 @@
+.search-part {
+    display: inline-block;
+    width: 200px;
+    padding-top: 5px;
+    position: relative;
+    input {
+        width: 100%;
+        border: 1px solid grey;
+        border-radius: 5%;
+        padding: 5px;
+    }
+    ul {
+        position: absolute;
+        background: white;
+        z-index: 50;
+        width: 100%;
+    }
+    ul li {
+        list-style-type: none;
+        /* background: lightgray; */
+        a {
+            border: 1px solid grey;
+            // margin: 10px 0;
+            padding: 10px;
+            display: block;
+        }
+    }
+}

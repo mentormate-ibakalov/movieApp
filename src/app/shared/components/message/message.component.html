@@ -1,0 +1,3 @@
+<div appMessageAnimation *ngIf="msg | async" class="clearfix {{ (msg | async ).type ? (msg | async ).type + ' letIn' : '' }}" id="message">
+    <h4>{{(msg | async ).msg}}</h4>
+</div>

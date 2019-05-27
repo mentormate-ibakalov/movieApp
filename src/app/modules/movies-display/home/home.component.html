@@ -1,0 +1,9 @@
+<h1 class="text-uppercase text-center text-bold text-primary">film database</h1>
+<div *ngIf="!(movies$ | async)">
+    <div class="lineOne">
+        <app-get-movies [checkLoggedIn]="checkLoggedIn" type="popular-movies"></app-get-movies>
+    </div>
+    <div class="lineTwo">
+        <app-get-movies [checkLoggedIn]="checkLoggedIn" type="now-playing-movies"></app-get-movies>
+    </div>
+</div>
