@@ -15,7 +15,6 @@ export class HeaderComponent  {
     ) {}
    
   isLoggedIn: boolean;
-  
   siteUrls:object = SITEURLS;
   checkIfLoggedIn():void {
     this.authService.currentLoginStatus.subscribe(
