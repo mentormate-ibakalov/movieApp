@@ -16,12 +16,9 @@ export class UserHeader implements HttpInterceptor {
             } else {
                 this.token = 'UNAUTHORIZED';
             }
-
             this.jsonReq = req.clone({
                 setHeaders: { 'Authorization': `Bearer ${this.token}` }
             })
-
-
         } else {
             this.jsonReq = req.clone()
         }

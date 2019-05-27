@@ -10,17 +10,16 @@ import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-get-movies',
-  templateUrl: './get-movies.component.html',
-  styleUrls: ['./get-movies.component.scss']
+  templateUrl: './get-movies.component.html'
 })
 
 export class GetMoviesComponent implements OnInit {
   constructor(
-    private GetMoviesService: GetMoviesService,
+    private getMoviesService: GetMoviesService,
     private messageService: MessageService,
     private favoriteMoviesService: FavoriteMoviesService,
     private router: Router
-    ) { }
+    ) {}
 
   movies$: Observable<Object>;
   title: string;
@@ -33,7 +32,7 @@ export class GetMoviesComponent implements OnInit {
 
   
   getMovies(): Observable<Object>  {
-   return this.GetMoviesService.getMovies(this.type);
+   return this.getMoviesService.getMovies(this.type);
   }
   
 
@@ -46,33 +45,8 @@ export class GetMoviesComponent implements OnInit {
     else this.favoriteMoviesService.addFavoriteMovies(id).subscribe();
   }
 
-  
-  // search(term: string): void {
-  //   this.searchTerms.next(term);
-  // }
-
-  // initialiseSearch(): void {
-  //   this.movies$ = this.searchTerms.pipe(
-  //     // wait 300ms after each keystroke before considering the term
-  //     debounceTime(300),
-
-  //     // ignore new term if same as previous term
-  //     distinctUntilChanged(),
-
-  //     // switch to new search observable each time the term changes
-  //     switchMap((term: string) => this.GetMoviesService.searchMovies(term)),
-  //   )   
-  //   // this.GetMoviesService.passSearchData(this.movies$);
-  // }
-
   ngOnInit() {
-    // ;
-    // this.getMovies();
-    // this.movies$ = this.GetMoviesService.currentObj;
     this.movies$ = this.getMovies();
-    
-    // this.GetMoviesService.currentObj.subscribe(mess => console.log(mess));
-
     this.title = this.type.replace(/-/g, " ").toUpperCase();
   }
 }

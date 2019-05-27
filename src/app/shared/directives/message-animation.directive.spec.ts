@@ -3,7 +3,7 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 describe('MessageAnimationDirective', () => {
   it('should create an instance', () => {
-    // const directive = new MessageAnimationDirective();
-    // expect(directive).toBeTruthy();
+    const directive = new MessageAnimationDirective();
+    expect(directive).toBeTruthy();
   });
 });

@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class CacheInterceptor implements HttpInterceptor {
-    constructor(private cacheService: HttpCacheService) {}
+    constructor(private cacheService: HttpCacheService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (req.method !== 'GET') {
@@ -20,18 +20,18 @@ export class CacheInterceptor implements HttpInterceptor {
         if (cachedResponse) {
             console.log(`returning cached response ${cachedResponse['url']}`);
             console.table(cachedResponse);
-            return of(cachedResponse); 
+            return of(cachedResponse);
         }
-        
+
         return next.handle(req)
-        .pipe(
-            tap(event => {
-                if (event instanceof HttpResponse) {
-                    console.log(`adding item to cache ${req.url}`);
-                    this.cacheService.put(req.url, event);
-                }
-            })
-        )
+            .pipe(
+                tap(event => {
+                    if (event instanceof HttpResponse) {
+                        console.log(`adding item to cache ${req.url}`);
+                        this.cacheService.put(req.url, event);
+                    }
+                })
+            )
 
     }
 }

@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
         res => {
           this.MessageService.handleSuccess('Login successful');
           localStorage.setItem('token', res['msg']);
-          
           this.AuthService.setStatus(true);
           this.Router.navigate([ 'user/details' ]);
         },

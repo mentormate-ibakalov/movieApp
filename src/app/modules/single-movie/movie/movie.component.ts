@@ -13,7 +13,7 @@ import { GetMoviesService } from '@shared/services/get-movies.service';
 export class MovieComponent implements OnInit {
 
   constructor(
-    private GetMoviesService: GetMoviesService,
+    private getMoviesService: GetMoviesService,
     private router: Router,
     private route: ActivatedRoute,
   ) {
@@ -24,7 +24,7 @@ export class MovieComponent implements OnInit {
   id: number;
 
   getMovie() {
-    this.GetMoviesService.getMovie(this.id)
+    this.getMoviesService.getMovie(this.id)
       .subscribe(movie => {
         this.movie = movie;
         // console.log(this.movie);

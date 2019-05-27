@@ -55,7 +55,6 @@ app.post('/rest/login', function(req, res) {
     } else {
         res.status(400).send('invalid user or password');
     }
-
 });
 
 

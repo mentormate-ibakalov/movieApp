@@ -9,12 +9,13 @@ import { MessageService } from '@shared/services/message.service';
 })
 export class MessageComponent implements OnInit {
 
-  constructor(private MessageService: MessageService) { }
+  constructor(
+    private messageService: MessageService
+    ) { }
   msg: any;
 
   ngOnInit() {
-    // this.MessageService.currentMassage.subscribe(msg => this.msg = msg); 
-    this.msg = this.MessageService.currentMassage;
+    this.msg = this.messageService.currentMassage;
   }
 
 }
