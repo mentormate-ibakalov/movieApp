@@ -1,5 +1,5 @@
 import { MessageService } from '@shared/services/message.service';
-import { AuthService } from './auth.service';
+import { AuthService } from '@shared/services/auth.service';
 import { Injectable, OnInit } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';

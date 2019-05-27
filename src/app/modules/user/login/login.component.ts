@@ -2,7 +2,7 @@ import { MessageService } from '@shared/services/message.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { LoginObject } from '@shared/interfaces/loginObj';
-import { AuthService } from '@modules/user/auth.service';
+import { AuthService } from '@shared/services/auth.service';
 import { Router } from '@angular/router';
 
 

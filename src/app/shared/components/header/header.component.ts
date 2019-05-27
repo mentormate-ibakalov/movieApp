@@ -1,6 +1,6 @@
 import { SITEURLS } from '@shared/siteUrls';
-import { AuthService } from '@modules/user/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@shared/services/auth.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',

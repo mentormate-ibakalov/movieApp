@@ -1,4 +1,4 @@
-import { AuthService } from '@modules/user/auth.service';
+import { AuthService } from '@shared/services/auth.service';
 import { Router, NavigationStart, Event } from '@angular/router';
 import { TokenCheckDummyService } from '@shared/services/token-check-dummy.service';
 import { Component, OnInit } from '@angular/core';

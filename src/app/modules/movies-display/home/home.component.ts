@@ -1,4 +1,4 @@
-import { AuthService } from '@modules/user/auth.service';
+import { AuthService } from '@shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '@shared/services/search.service';
 import { Observable, of } from 'rxjs';
