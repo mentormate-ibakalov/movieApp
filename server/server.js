@@ -2,7 +2,7 @@ const express = require('express');
 // const https = require('https');
 const http = require('http');
 const mode = 'prod';
-// const fs = require('fs');
+const fs = require('fs');
 const app = express();
 const httpServer = http.createServer(app);
 const path = require('path');
@@ -30,6 +30,29 @@ app.use(session({
     activeDuration: 5 * 60 * 1000,
 }));
 
+app.post('/rest/register', function(req, res) {
+
+    let rawdata = fs.readFileSync('users.json');
+    let user = JSON.parse(rawdata)
+
+    user[req.body.user] = {
+        user: req.body.user,
+        pass: req.body.paswordGroup.pass,
+        name: req.body.name,
+        surname: req.body.surname,
+        phone: req.body.phone,
+        email: req.body.surname
+    }
+
+    let data = JSON.stringify(user);
+
+    fs.writeFileSync('users.json', data);
+    // console.log(req.body)
+    fs.writeFileSync('users.json', data);
+    res.status(200).send((user[req.body.user]));
+})
+
+
 app.post('/rest/logout', function(req, res) {
     req.session.destroy(function(err) {
         res.send(err);
@@ -49,13 +72,19 @@ app.post('/rest/isLoggedIn', function(req, res) {
     }
 })
 
+
 app.post('/rest/login', function(req, res) {
-    if (req.body.userName == 'I.Bakalov' && req.body.userPass == '1234') {
-        res.status(200).send({ msg: '4179bafbbdcdc6dca8c4bf02f199c74848fc045d' });
-    } else {
-        res.status(400).send('invalid user or password');
+    let check = false;
+    let rawdata = fs.readFileSync('users.json');
+    let user = JSON.parse(rawdata);
+
+    if (user[req.body.userName] && user[req.body.userName].pass == req.body.userPass) {
+        check = true;
     }
+    if (check) res.status(200).send((user[req.body.userName]));
+    else res.status(400).send('invalid user or password');
 });
+
 
 
 

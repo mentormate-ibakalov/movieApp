@@ -24,7 +24,17 @@
         // border-radius: 7px;
         width: 150px;
         margin: 0 auto;
-        display: block;
+        // display: block;
+    }
+    .button-primary {
+        margin: 0 10px;
+    }
+    a.button-primary {
+        background: darkred;
+        padding: 8px 10px;
+        color: black;
+        color: white;
+        font-weight: bold;
     }
     input {
         background: transparent;

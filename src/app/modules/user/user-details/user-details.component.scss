@@ -1,0 +1,17 @@
+.innerDetails {
+    background: whitesmoke;
+    padding: 55px;
+    margin: 40px 0 0 0;
+    img {
+        margin: 0 auto;
+        display: block;
+    }
+    p {
+        border-bottom: 1px solid gray;
+        color: gray;
+        line-height: 40px;
+        padding: 0 8px;
+        display: block;
+        cursor: pointer;
+    }
+}

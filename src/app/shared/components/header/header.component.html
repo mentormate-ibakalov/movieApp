@@ -9,7 +9,7 @@
             <div class="userPart pull-right">
                 <div *ngIf="isLoggedIn; else loggedOut">
                     <div class="loggedIn">
-                        <span class="menu-links text-uppercase text-center text-primary">HI, I.Bakalov</span>
+                        <span class="menu-links text-uppercase text-center text-primary">HI, {{userDetails.name}}</span>
                         <img src="https://img.icons8.com/bubbles/48/000000/user.png" alt="user pic">
                         <ul>
                             <li><a class="menu-links text-uppercase" routerLink="{{siteUrls['user-details']}}">User details</a></li>

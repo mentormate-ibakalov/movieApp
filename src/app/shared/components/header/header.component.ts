@@ -1,7 +1,7 @@
 import { SITEURLS } from '@shared/siteUrls';
 import { AuthService } from '@shared/services/auth.service';
 import { Component } from '@angular/core';
-
+import { userObject } from '@shared/interfaces/userObject';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,14 +16,23 @@ export class HeaderComponent  {
    
   isLoggedIn: boolean;
   siteUrls:object = SITEURLS;
+  userDetails:userObject
+
   checkIfLoggedIn():void {
-    this.authService.currentLoginStatus.subscribe(
-      res => this.isLoggedIn = res
-      )
+    this.authService.currentLoginStatus.subscribe (
+      res => {
+        this.isLoggedIn = res
+        if (res) {
+          this.userDetails = JSON.parse(localStorage.getItem('userDetails'));
+        }
+      }
+    )
   }
+  
   logout():void {
     this.authService.setStatus(false);
     localStorage.removeItem('token');
+    localStorage.removeItem('userDetails');
   }
   ngOnInit() {
     this.checkIfLoggedIn();

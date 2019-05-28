@@ -13,10 +13,11 @@
                 <input formControlName="userPass" class="form-control" type="password" id="user-pass" placeholder="password ..." required>
             </div>
         </div>
-        <div class="fourm-group">
+        <div class="fourm-group text-center">
             <span (mouseenter)="mouseOverLogin = true" (mouseleave)="mouseOverLogin = false">
-        <button [disabled]="loginForm.invalid" class="button-primary requ" type="submit">Submit</button> 
+        <button [disabled]="loginForm.invalid" class="button-primary  text-uppercase requ" type="submit">Submit</button> 
         </span>
+            <a class="button-primary text-uppercase requ" routerLink="{{siteUrls['user-register']}}">register</a>
         </div>
     </div>
 </form>

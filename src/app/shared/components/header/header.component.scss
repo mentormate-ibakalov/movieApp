@@ -17,6 +17,7 @@ header {
     .loggedIn {
         position: relative;
         cursor: pointer;
+        min-width: 140px;
     }
     .loggedIn ul {
         display: none;

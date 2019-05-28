@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { userObject } from '@shared/interfaces/userObject';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  userDetails:userObject;
 
   ngOnInit() {
+    this.userDetails = JSON.parse(localStorage.getItem('userDetails'));
   }
 
 }

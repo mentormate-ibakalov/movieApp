@@ -19,14 +19,21 @@ export class SearchComponent implements OnInit {
   // private searchTerms = new Subject<string>();
   siteUrls = SITEURLS;
   showList = false;
-  
+  value:string = '';
+
   @Output() emitToHeader = new EventEmitter();
   
-  search(term: string): void {
+  search(): void {
+    // console.log(this.value)
     // this.searchTerms.next(term);
-    this.getMoviesService.search(term);
+    this.getMoviesService.search(this.value);
   }
   
+  hideDropdown(val) {
+    this.showList = false;
+    // console.log(val);
+    this.value = '';
+  }
   initialiseSearch(): void {
     this.movies$ = this.getMoviesService.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
