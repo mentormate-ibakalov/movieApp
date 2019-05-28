@@ -1,0 +1,68 @@
+<form autocomplete="off" [formGroup]="registerForm" id="registerForm" (ngSubmit)="onSubmit(registerForm.value)" novalidate>
+    <div class="innerLoginForm">
+        <h2 class="text-uppercase text-center text-bold text-primary">Register</h2>
+        <div class="mentor-center">
+            <div class="clearfix">
+                <div class="fourm-group col-md-12">
+                    <span class="required text-danger" *ngIf="registerForm.controls.user?.invalid && (registerForm.controls.user?.touched  || mouseOverRegister)">required</span>
+                    <input formControlName="user" class="form-control" type="text" id="user" placeholder="user name ..." required>
+                </div>
+
+                <div class="fourm-group col-md-4">
+                    <span class="required text-danger" *ngIf="registerForm.controls.name?.invalid && (registerForm.controls.name?.touched  || mouseOverRegister)">required</span>
+                    <input formControlName="name" class="form-control" type="text" id="name" placeholder="name ..." required>
+                </div>
+
+                <div class="fourm-group col-md-4">
+                    <span class="required text-danger" *ngIf="registerForm.controls.surname?.invalid && (registerForm.controls.surname?.touched  || mouseOverRegister)">
+                      required
+                    </span>
+                    <input formControlName="surname" class="form-control" type="text" id="surname" placeholder="surname ..." required>
+                </div>
+
+                <div class="fourm-group col-md-4">
+                    <!-- <span class="required text-danger" *ngIf="registerForm.controls.phone?.invalid && (registerForm.controls.phone?.touched  || mouseOverRegister)">required</span> -->
+                    <input formControlName="phone" class="form-control" type="number" id="phone" placeholder="phone number ...">
+                </div>
+
+                <div class="fourm-group col-md-4">
+                    <span class="required text-danger" *ngIf="registerForm.controls.email?.invalid && (registerForm.controls.email?.touched || mouseOverRegister)">
+                      {{ registerForm.controls.email?.errors.email ? msgObject.email.notValid : msgObject.email.required }}
+                    </span>
+                    <input formControlName="email" class="form-control" type="email" id="email" placeholder="email ...">
+                </div>
+
+
+                <div formGroupName="paswordGroup">
+                    <div class="fourm-group col-md-4">
+                        <span class="required text-danger" *ngIf="registerForm.controls.paswordGroup.controls.pass?.invalid && 
+                        (registerForm.controls.paswordGroup.controls.pass?.touched  || mouseOverRegister)">
+                        {{ (registerForm.controls.paswordGroup.controls.pass?.errors.paswordCheck && registerForm.controls.paswordGroup.controls.pass?.value) ? msgObject.passwords.characters : msgObject.passwords.required }}
+                      </span>
+                        <input formControlName="pass" class="form-control" type="password" id="pass" placeholder="password ...">
+                    </div>
+
+                    <div class="fourm-group col-md-4">
+                        <span class="required text-danger" *ngIf="registerForm.controls.paswordGroup.controls.passRepeat?.invalid && 
+                        (registerForm.controls.paswordGroup.controls.passRepeat?.touched || mouseOverRegister)">
+                        {{ msgObject.passwords.required }}
+                    </span>
+
+                        <span class="required text-danger" *ngIf="registerForm.controls.paswordGroup?.invalid && 
+                        (registerForm.controls.paswordGroup?.touched  || mouseOverRegister) &&
+                         (registerForm.controls.paswordGroup.controls.passRepeat?.value && registerForm.controls.paswordGroup.controls.pass?.value)">
+                        {{msgObject.passwords.mismatch}}
+                      </span>
+                        <input formControlName="passRepeat" class="form-control" type="password" id="passRepeat" placeholder="repeat your password ...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fourm-group text-center">
+            <span (mouseenter)="mouseOverRegister = true" (mouseleave)="mouseOverRegister = false">
+                <button [disabled]="registerForm.invalid" class="button-primary  text-uppercase requ" type="submit">Register</button>
+      
+    </span>
+        </div>
+    </div>
+</form>

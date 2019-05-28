@@ -1,0 +1,56 @@
+#registerForm {
+    .requ {
+        cursor: pointer;
+    }
+    .innerLoginForm {
+        width: 80%;
+        max-width: 1400px;
+        margin: 0 auto;
+        background: rgba(204, 204, 204, 0.2);
+        padding: 50px 10px;
+        border-radius: 17px;
+    }
+    #user input {
+        width: 60%;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    .fourm-group {
+        margin: 4px 0;
+        position: relative;
+    }
+    button {
+        background: #ccc;
+        border: none;
+        padding: 7px;
+        // border-radius: 7px;
+        width: 150px;
+        margin: 0 auto;
+        // display: block;
+    }
+    .button-primary {
+        margin: 0 10px;
+    }
+    a.button-primary {
+        background: darkred;
+        padding: 8px 10px;
+        color: black;
+        color: white;
+        font-weight: bold;
+    }
+    input {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        box-shadow: none;
+        padding-left: 0;
+        margin: 20px 0;
+    }
+    .required {
+        position: absolute;
+        bottom: 0px;
+        left: 15px;
+    }
+}
