@@ -5,6 +5,10 @@
         </a>
         <!-- user-detail -->
         <div class="link-part col-md-10">
+            <ul class="main-links">
+                <li><a class="menu-links text-uppercase text-center text-bold text-primary" routerLink="{{siteUrls['upcoming']}}">Upcoming movies</a></li>
+                <li><a class="menu-links text-uppercase text-center text-bold text-primary" routerLink="{{siteUrls['popular']}}">Popular movies</a></li>
+            </ul>
             <app-search (emitToHeader)="searchMovies($event)"></app-search>
             <div class="userPart pull-right">
                 <div *ngIf="isLoggedIn; else loggedOut">
@@ -24,4 +28,3 @@
             </div>
         </div>
     </div>
-</header>

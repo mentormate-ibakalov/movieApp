@@ -1,6 +1,5 @@
 <app-header></app-header>
-<div id="main-part" class="mentor-center">
-    <!-- <app-search-result></app-search-result> -->
-    <router-outlet></router-outlet>
-</div>
+<main id="main-part" class="mentor-center" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>
 <app-message></app-message>

@@ -1,0 +1,15 @@
+<div class="outerPagination clearfix">
+    <div class="innerPagination text-uppercase pull-right">
+        <span class="paginationBtns text-center" [ngClass]="{'active': currentPage !== 1}" (click)="returnPageFunc('previous')">previous</span>
+        <!-- <span>1</span> -->
+        <!-- <span>{{ totalPages - currentPage }}</span>
+        <span>{{ totalPages - currentPage }}</span> -->
+        <span class="dots">...</span>
+        <span class="current text-bold">page {{currentPage}} of {{totalPages}}</span>
+        <span class="dots">...</span>
+        <!-- <span></span>
+        <span></span> -->
+        <!-- <span>{{totalPages}}</span> -->
+        <span class="paginationBtns text-center" [ngClass]="{'active': totalPages > currentPage}" (click)="returnPageFunc('next')">next</span>
+    </div>
+</div>

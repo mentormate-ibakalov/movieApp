@@ -11,6 +11,8 @@ import { SearchResultComponent } from '@shared/components/search-result/search-r
 import { MessageComponent } from '@shared/components/message/message.component';
 import { MessageAnimationDirective } from '@shared/directives/message-animation.directive';
 import { KebapTopNormalPipe } from '@shared/pipes/kebap-top-normal.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { KebapTopNormalPipe } from '@shared/pipes/kebap-top-normal.pipe';
     MessageComponent,
     GetMoviesComponent,
     HomeComponent,
-    KebapTopNormalPipe
+    KebapTopNormalPipe,
+    // PaginationComponent,
     // KebapTopNormalPipe
   ],
 
@@ -31,6 +34,7 @@ import { KebapTopNormalPipe } from '@shared/pipes/kebap-top-normal.pipe';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule
   ],
   
   exports: [
@@ -43,7 +47,7 @@ import { KebapTopNormalPipe } from '@shared/pipes/kebap-top-normal.pipe';
     MessageAnimationDirective,
     AppRoutingModule,
     KebapTopNormalPipe,
-    HomeComponent
+    HomeComponent,
   ],
 })
 

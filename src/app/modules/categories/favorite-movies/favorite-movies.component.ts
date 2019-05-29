@@ -1,4 +1,5 @@
-import { FavoriteMoviesService } from './favorite-movies.service';
+import { GetMoviesService } from '@shared/services/get-movies.service';
+// import { FavoriteMoviesService } from './favorite-movies.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SITEURLS } from '@shared/siteUrls';
@@ -11,12 +12,15 @@ import { SITEURLS } from '@shared/siteUrls';
 })
 export class FavoriteMoviesComponent implements OnInit {
 
-  constructor(private favoriteMoviesService: FavoriteMoviesService) { }
+  constructor(
+    private getMoviesService: GetMoviesService
+  ) { }
+  
   movies$: Observable<object>;
   siteUrls = SITEURLS;
 
   ngOnInit() {
-    this.movies$ = this.favoriteMoviesService.getFavoriteMovies();
+    this.movies$ = this.getMoviesService.getFavoriteMovies();
   }
 
 }

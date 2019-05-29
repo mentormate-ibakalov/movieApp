@@ -1,10 +1,1 @@
-{
-    "I.Bakalov": {
-        "user": "I.Bakalov",
-        "pass": "1234",
-        "name": "Ivaylo",
-        "surname": "Bakalov",
-        "phone": "088888888",
-        "email": "sss@rr.bg"
-    }
-}
+{"I.Bakalov":{"user":"I.Bakalov","pass":"1234","name":"Ivaylo","surname":"Bakalov","phone":"088888888","email":"sss@rr.bg"},"Ivan1":{"user":"Ivan1","pass":"1234A","name":"Ivan","surname":"Ivanov","phone":456789,"email":"Ivanov"},"Zaaaa":{"user":"Zaaaa","pass":"1234A","name":"Ivaj","surname":"iisss","phone":5555,"email":"iisss"}}

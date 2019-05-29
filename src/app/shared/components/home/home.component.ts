@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
 
     checkLoggedIn: boolean;
 
+    
     isLoggedIn() {
       this.authService.currentLoginStatus.subscribe(msg=> {
       this.checkLoggedIn = msg;
@@ -36,8 +37,6 @@ export class HomeComponent implements OnInit {
 
 
   getMovies(): Array<Observable<Movies<Object>>>  {
-    // this.getMoviesService.getMovies(this.sideBars)[0].subscribe(f => console.log(f))
-  //  this.getMoviesService.getMovies(this.sideBars)
   this.movies = this.getMoviesService.getMovies(this.sideBars);
   return this.movies;
   }

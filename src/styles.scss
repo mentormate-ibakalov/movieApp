@@ -11,6 +11,10 @@
     transition: $args;
 }
 
+.requ {
+    cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -91,6 +95,7 @@ body {
 
 #main-part {
     padding-top: 100px;
+    position: relative;
 }
 
 .innerMovie {

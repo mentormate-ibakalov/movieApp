@@ -6,6 +6,7 @@ import { Observable, of, Subject, BehaviorSubject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from './message.service';
+import { PostResponses } from '@shared/interfaces/postResponses';
 
 
 @Injectable({
@@ -25,7 +26,6 @@ export class GetMoviesService {
   searchResult = new Subject<Movies<Object>>();
   currentSearchResult = this.searchResult.asObservable();
 
-  // = this.alert.asObservable();
 
   getMovies(terms: Array<string>): Array<Observable<Movies<Object>>> {
     let allMovies:Array<Observable<Movies<Object>>> = [];
@@ -82,15 +82,23 @@ export class GetMoviesService {
         tap(result => this.searchResult.next(result)),
         catchError(err => {
           this.messageService.handleError(`The search engine is not working`);
-          console.log(err)
-          return search;
+          return of<Movies<Object>>()
       }));
       return search;
   }
 
+  getMoviesByCategory(category, page?):Observable<Movies<Object>> { 
+  return this.http.get<Movies<Object>>(this.formingApiUrlService.movies(category, page))
+   .pipe(
+        // tap(result => this.searchResult.next(result)),
+        catchError(err => {
+          this.messageService.handleError(`Cannot recive movies from categorie ${category}`);
+          return of<Movies<Object>>()
+      }));
+    }
 
 
-
+    
 
   private handleError<T>(operation = 'operation', result?: any) {
     return (error: any): Observable<any> => {
@@ -105,5 +113,31 @@ export class GetMoviesService {
       return of(result as T);
     };
   }
+
+  addFavoriteMovies(id:number): Observable<any> {
+    let saveObject = {
+      "media_type": "movie",
+      "media_id": id,
+      "favorite": true
+    }
+    
+    return this.http.post<PostResponses>(this.formingApiUrlService.addFavoriteMovies(), saveObject).pipe(
+      tap(_ => this.messageService.handleSuccess(`Movie id ${id} succesfuly added`)),
+      // catchError(err => this.messageService.handleError(err))
+    );
+  } 
+
+  getFavoriteMovies(): Observable<Movies<Object>> {
+    return this.http.get<Movies<Object>>(this.formingApiUrlService.getFavoriteMovies())
+    .pipe(
+      tap(_ => this.messageService.handleSuccess('Favorite movies loaded')),
+      catchError(err => {
+        this.messageService.handleError(err)
+        return of<Movies<Object>>();
+      })
+    );
+
+  }
+
 }
 

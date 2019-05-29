@@ -5,10 +5,10 @@ import { SelectiveStrategyService } from '@shared/services/selective-strategy.se
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'category', loadChildren: './modules/categories/categories.module#CategoriesModule'},
+  { path: '', component: HomeComponent, pathMatch: 'full', data: { animations: 'isRight' } },
+  { path: 'category', loadChildren: './modules/categories/categories.module#CategoriesModule', data: { animations: 'isleft' }}, 
   { path: 'user', 
-    data: { preload: true },
+    data: { preload: true, animations: 'isleft' },
     loadChildren: '@modules/user/user.module#UserModule'}
 ];
 

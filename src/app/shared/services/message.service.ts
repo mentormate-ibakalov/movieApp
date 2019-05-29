@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 
 
 export class MessageService {
-  alert = new BehaviorSubject<object>({});
+  private alert = new BehaviorSubject<object>({});
   currentMassage = this.alert.asObservable();
 
   private log(message: string, type?: string) {

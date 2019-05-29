@@ -3,13 +3,20 @@ import { MovieComponent } from '@modules/categories/movie/movie.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FavoriteMoviesComponent } from './favorite-movies/favorite-movies.component';
+import { SpecialCategoriesComponent } from './special-categories/special-categories.component';
+import { PaginationComponent } from '@shared/components/pagination/pagination.component';
+
 // import { SharedModule } from '@shared/shared.module';
 // import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    MovieComponent
+    MovieComponent,
+    FavoriteMoviesComponent,
+    SpecialCategoriesComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +24,8 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild(CategoryRoutes)
   ],
   exports: [
-    MovieComponent
+    MovieComponent,
+    FavoriteMoviesComponent
   ],
 })
 

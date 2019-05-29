@@ -1,0 +1,17 @@
+<div id="all-movies" class="movies-side-bar clearfix">
+    <div title="{{mo.original_title}}" class="col-md-1 outerMovie text-center" *ngFor="let mo of movie?.results">
+        <div class="innerMovie">
+            <a routerLink="{{siteUrls['single-movie'] + mo.id}}">
+                <h2>
+                    <span class="text-primary text-bold">{{mo.original_title}}</span>
+                    <p class="text-secondary">{{ mo.title }}</p>
+                </h2>
+                <div class="movieImageDiv center-block" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500' + mo.poster_path + ')'}"></div>
+            </a>
+            <div class="movie-btns">
+                <button (click)="addFavorite(mo.id)">add to favorites</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-pagination (returnPage)="paginating($event)" [currentPage]="movie?.page" [totalPages]="movie?.total_pages"></app-pagination>

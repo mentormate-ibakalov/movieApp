@@ -1,0 +1,21 @@
+.outerPagination {
+    margin: 10px 0;
+    .innerPagination {
+        background: whitesmoke;
+        color: gray;
+    }
+    .paginationBtns {
+        display: inline-block;
+        cursor: not-allowed;
+        opacity: 0.5;
+        padding: 10px;
+    }
+    .paginationBtns.active {
+        cursor: pointer;
+        opacity: 1;
+    }
+    .paginationBtns.active:hover {
+        background: darkgray;
+        color: azure;
+    }
+}

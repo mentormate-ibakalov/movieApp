@@ -7,12 +7,17 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { UserHeader } from '@shared/providers/app.user-header';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { FavoriteMoviesComponent } from '@modules/user/favorite-movies/favorite-movies.component';
+// import { FavoriteMoviesComponent } from '@modules/user/favorite-movies/favorite-movies.component';
 import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, UserDetailsComponent, FavoriteMoviesComponent, RegisterComponent],
+  declarations: [
+    LoginComponent,
+     UserDetailsComponent,
+      // FavoriteMoviesComponent, 
+      RegisterComponent
+    ],
   imports: [
     CommonModule,
     RouterModule.forChild(UserRoutes),
@@ -23,7 +28,7 @@ import { RegisterComponent } from './register/register.component';
   exports: [
     LoginComponent,
     RegisterComponent,
-    FavoriteMoviesComponent
+    // FavoriteMoviesComponent
   ]
 })
 

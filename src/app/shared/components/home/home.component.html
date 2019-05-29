@@ -1,12 +1,12 @@
 <h1 class="text-uppercase text-center text-bold text-primary">film database</h1>
 
 <div [hidden]="!(searchResult$ | async)">
-    <app-get-movies [checkLoggedIn]="checkLoggedIn " [movie]="searchResult$ | async "></app-get-movies>
+    <app-get-movies [checkLoggedIn]="checkLoggedIn" [movie]="searchResult$ | async "></app-get-movies>
 </div>
 
 <!-- <ng-template #moviesSideBar> -->
 <div [hidden]="(searchResult$ | async)" *ngFor="let movie$ of movies ">
-    <app-get-movies [checkLoggedIn]="checkLoggedIn " [movie]="movie$ | async "></app-get-movies>
+    <app-get-movies [checkLoggedIn]="checkLoggedIn" [movie]="movie$ | async"></app-get-movies>
 </div>
 <!-- </ng-template> -->
 
