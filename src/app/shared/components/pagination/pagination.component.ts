@@ -8,11 +8,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PaginationComponent {
 
-
-  @Output() returnPage = new EventEmitter<number>();
   @Input() totalPages: number;
   @Input() currentPage: number;
-
+  @Output() returnPage = new EventEmitter<number>();
 
   returnPageFunc(type: string) {
     if (type == 'next' && this.totalPages > this.currentPage) this.currentPage++;

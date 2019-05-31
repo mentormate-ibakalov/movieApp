@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { APIURL } from '@shared/apiUrl';
+import { APIURL } from '@shared/api-url.config';
 
 
 @Injectable({
@@ -8,14 +8,8 @@ import { APIURL } from '@shared/apiUrl';
 
 export class FormingApiUrlService {
  
-  constructor() { 
-
-  // this.token = localStorage.getItem('token');
-  // this.apiUrl = APIURL;
-  }
-  private token:string = localStorage.getItem('token');
   private apiUrl:Object = APIURL;
-
+  
   singleMovie(id:number):string {
     return this.apiUrl['root'] + this.apiUrl['URLS']['single-movie'] + '/' + id + this.apiUrl['api_key'];
   }
@@ -30,7 +24,7 @@ export class FormingApiUrlService {
   }
 
   addFavoriteMovies():string  {
-    return this.apiUrl['root'] + this.apiUrl['URLS']['add-favorite-movies'] + this.apiUrl['api_key'] + '&session_id=' + this.token;
+    return this.apiUrl['root'] + this.apiUrl['URLS']['add-favorite-movies'] + this.apiUrl['api_key'] + '&session_id=' + localStorage.getItem('token');
   }
 
   getFavoriteMovies():string  {

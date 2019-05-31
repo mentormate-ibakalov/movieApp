@@ -10,6 +10,7 @@ transition('isLeft => *', slideTo('right')),
 
 
 function slideTo(direction) {
+
 const optional = {optional: true}
 return [
     query(':enter, :leave', [
@@ -35,4 +36,5 @@ return [
         ], optional)  
     ])
 ];
+
 }

@@ -1,7 +1,9 @@
-import { SingleMovie } from '@shared/interfaces/singleMovie';
+import { SingleMovie } from '@shared/interfaces';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { GetMoviesService } from '@shared/services/get-movies.service';
+import { MoviesService } from '@shared/services';
+import { SITEURLS } from '@shared/site-urls.config';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,24 +15,22 @@ import { GetMoviesService } from '@shared/services/get-movies.service';
 export class MovieComponent implements OnInit {
 
   constructor(
-    private getMoviesService: GetMoviesService,
-    private router: Router,
+    private moviesService: MoviesService,
     private route: ActivatedRoute,
   ) {
+
     this.id = + this.route.snapshot.paramMap.get('id');
   }
 
-  movie: SingleMovie<Object>;
+  movie$: Observable<SingleMovie>;
   id: number;
+  siteUrls = SITEURLS;
 
   getMovie() {
-    this.getMoviesService.getMovie(this.id)
-      .subscribe(movie => {
-        this.movie = movie;
-      });
+   this.movie$ = this.moviesService.getMovie(this.id);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getMovie()
   }
 

@@ -7,5 +7,7 @@ export const SITEURLS: Object = {
     'user-login': '/user/login/',
     'user-register': '/user/register/',
     'user-details': '/user/details/',
-    'user-favorite-movies': '/category/favorite/'
+    'user-favorite-movies': '/category/favorite/',
+    'pics-link': 'https://image.tmdb.org/t/p/w500'
+
 }

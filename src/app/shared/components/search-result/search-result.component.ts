@@ -1,14 +1,14 @@
-import { GetMoviesService } from '@shared/services/get-movies.service';
-import { Component, OnInit, Input } from '@angular/core';
-import { SITEURLS } from '@shared/siteUrls';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { SITEURLS } from '@shared/site-urls.config';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class SearchResultComponent {
-  constructor(private getMoviesService: GetMoviesService) {}
   movies$: Observable<Object>;
   siteUrls = SITEURLS
 }

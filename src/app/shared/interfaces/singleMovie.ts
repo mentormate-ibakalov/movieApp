@@ -22,7 +22,7 @@ class SpokenLang {
 }
 
 
-export class SingleMovie<Object> {
+export class SingleMovie {
     "adult": boolean;
     "backdrop_path": string;
     "belongs_to_collection": any;

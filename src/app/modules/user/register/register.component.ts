@@ -1,8 +1,7 @@
-import { MessageService } from '@shared/services/message.service';
-import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { MessageService, AuthService } from '@shared/services';
+import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { userObject } from '@shared/interfaces/userObject';
-import { AuthService } from '@shared/services/auth.service';
+import { User } from '@shared/interfaces/user';
 import { Router } from '@angular/router';
 
 
@@ -25,7 +24,7 @@ export class RegisterComponent implements OnInit {
   mouseOverRegister: boolean = false;
   registerForm: FormGroup;
 
-  onSubmit(registerObject: userObject): void {
+  onSubmit(registerObject: User): void {
     console.log(registerObject)
     if (!this.registerForm.invalid) {
       this.authService.userRegister(registerObject).subscribe(
@@ -35,17 +34,15 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('token', '4179bafbbdcdc6dca8c4bf02f199c74848fc045d');
           localStorage.setItem('userDetails', JSON.stringify(res));
           this.authService.setStatus(true);
-          this.router.navigate([ 'user/details' ]);
+          this.router.navigate(['user/details']);
         },
         err => {
           this.messageService.handleError(err);
         }
       )
-
-
-
     }
   }
+  
   msgObject = {
     email: {
       required: 'required',
@@ -68,7 +65,8 @@ export class RegisterComponent implements OnInit {
       paswordGroup: this.formBuilder.group({
         pass: [null, [passwordCheck, Validators.required]],
         passRepeat: [null, Validators.required],
-      }, { validator: machPasswords })
+      }, 
+      { validator: machPasswords })
     })
   }
 

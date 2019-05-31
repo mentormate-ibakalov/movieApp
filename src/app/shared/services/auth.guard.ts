@@ -1,6 +1,6 @@
 import { MessageService } from '@shared/services/message.service';
 import { AuthService } from '@shared/services/auth.service';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -15,9 +15,10 @@ export class AuthGuard implements CanActivate {
     private messageService: MessageService
   ) {
 
-    this.authService.currentLoginStatus.subscribe(
-      res => {
-        this.isLoggedIn = res;
+    
+  this.authService.getStatus().subscribe(
+      res => { 
+        this.isLoggedIn = res; 
       })
   }
 
@@ -34,7 +35,6 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['user/login']);
       this.messageService.handleError(`You need to be logged in to access this route`);
     }
-
 
     return this.isLoggedIn;
   }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class TokenCheckDummyService {
 
   imitatingTokenExpirationcheck(): Observable<boolean> {
     if (localStorage.getItem('token')) {
-      return this.http.post<boolean>( 'http://localhost:4444/rest/isLoggedIn', {} ).pipe();
+      return this.http.post<boolean>( 'http://localhost:4444/rest/isLoggedIn', {});
     } else return of(false)
   }
 }

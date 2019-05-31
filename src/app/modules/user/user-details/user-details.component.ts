@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { userObject } from '@shared/interfaces/userObject';
+import { User } from '@shared/interfaces/user';
 
 @Component({
   selector: 'app-user-details',
@@ -8,7 +8,7 @@ import { userObject } from '@shared/interfaces/userObject';
 })
 export class UserDetailsComponent implements OnInit {
 
-  userDetails:userObject;
+  userDetails:User;
 
   ngOnInit() {
     this.userDetails = JSON.parse(localStorage.getItem('userDetails'));

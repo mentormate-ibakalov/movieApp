@@ -1,4 +1,4 @@
-import { AuthGuard } from '../../shared/services/auth.guard';
+import { AuthGuard } from '@shared/services/auth.guard';
 import { LoginComponent } from "./login/login.component";
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { RegisterComponent } from './register/register.component';

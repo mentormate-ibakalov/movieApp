@@ -25,31 +25,30 @@ header {
         position: relative;
         cursor: pointer;
         min-width: 140px;
-    }
-    .loggedIn ul {
-        display: none;
-        position: absolute;
-        background: whitesmoke;
-        // padding: 10px;
+        ul {
+            display: none;
+            position: absolute;
+            background: whitesmoke;
+        }
+        li {
+            list-style-type: none;
+            a {
+                border-bottom: 1px solid gray;
+                color: gray;
+                // background: rebeccapurple;
+                line-height: 40px;
+                padding: 0 8px;
+                display: block;
+                cursor: pointer;
+            }
+            a:hover {
+                background: gray;
+                color: whitesmoke;
+                text-decoration: none;
+            }
+        }
     }
     .loggedIn:hover ul {
         display: block;
-    }
-    .loggedIn li {
-        list-style-type: none;
-    }
-    .loggedIn li a {
-        border-bottom: 1px solid gray;
-        color: gray;
-        // background: rebeccapurple;
-        line-height: 40px;
-        padding: 0 8px;
-        display: block;
-        cursor: pointer;
-    }
-    .loggedIn li a:hover {
-        background: gray;
-        color: whitesmoke;
-        text-decoration: none;
     }
 }

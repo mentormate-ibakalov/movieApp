@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-// import { catchError, map, tap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -9,26 +8,30 @@ import { BehaviorSubject } from 'rxjs';
 
 
 export class MessageService {
-  private alert = new BehaviorSubject<object>({});
-  currentMassage = this.alert.asObservable();
+  private _alert = new BehaviorSubject<object>({});
 
-  private log(message: string, type?: string) {
-    this.alert.next({ msg: message, type: type })
+
+  private _log(message: string, type?: string) {
+    this._alert.next({ msg: message, type: type })
+  }
+
+  getMessage() {
+   return this._alert;
   }
 
   public clearAlert(): any {
-    this.alert.next({});
+    this._alert.next({});
   }
 
   public handleSuccess(msg?: any): any {
-    if (msg) return this.log(msg, 'success')
-    else return this.log('super', 'success');
+    if (msg) return this._log(msg, 'success')
+    else return this._log('super', 'success');
   }
 
   public handleError(err?: any): any {
-    if (err.hasOwnProperty('error')) return this.log(err.error, 'error')
-    else if ( typeof err == 'string')  return this.log(err, 'error')
-    else return this.log('something went wrong', 'error');
+    if (err.hasOwnProperty('error')) return this._log(err.error, 'error')
+    else if ( typeof err == 'string')  return this._log(err, 'error')
+    else return this._log('something went wrong', 'error');
   }
 
 }

@@ -1,5 +1,5 @@
 import { SpecialCategoriesComponent } from './special-categories/special-categories.component';
-import { AuthGuard } from '@shared/services/auth.guard';
+import { AuthGuard } from '@shared/services';
 import { FavoriteMoviesComponent } from './favorite-movies/favorite-movies.component';
 import { MovieComponent } from './movie/movie.component';
 

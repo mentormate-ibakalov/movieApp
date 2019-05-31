@@ -7,7 +7,7 @@
                 <span class="text-primary text-bold">{{movie.original_title}}</span>
                 <p class="text-secondary">{{ movie.title }}</p>
             </h2>
-            <div class="movieImageDiv center-block" [ngStyle]="{ 'background-image': 'url(https://image.tmdb.org/t/p/w500' + movie.poster_path + ')'}"></div>
+            <div class="movieImageDiv center-block" [ngStyle]="{ 'background-image': 'url('+ siteUrls['pics-link'] + movie.poster_path + ')'}"></div>
         </div>
     </a>
 </div>

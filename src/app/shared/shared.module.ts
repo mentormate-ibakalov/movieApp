@@ -1,18 +1,14 @@
-import { HomeComponent } from '@shared/components/home/home.component';
-import { GetMoviesComponent } from '@shared/components/get-movies/get-movies.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from '@shared/components/header/header.component';
-import { SearchComponent } from '@shared/components/search/search.component';
-import { SearchResultComponent } from '@shared/components/search-result/search-result.component';
-import { MessageComponent } from '@shared/components/message/message.component';
+import { HeaderComponent, SearchComponent, SearchResultComponent, MessageComponent } from '@shared/components';
 import { MessageAnimationDirective } from '@shared/directives/message-animation.directive';
-import { KebapTopNormalPipe } from '@shared/pipes/kebap-top-normal.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { PaginationComponent } from './components/pagination/pagination.component';
+import { RouterModule } from '@angular/router';
+
+
+
 
 
 @NgModule({
@@ -22,9 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SearchResultComponent,
     MessageAnimationDirective,
     MessageComponent,
-    GetMoviesComponent,
-    HomeComponent,
-    KebapTopNormalPipe,
+    // GetMoviesComponent,
+    // HomeComponent,
+    // KebapTopNormalPipe,
     // PaginationComponent,
     // KebapTopNormalPipe
   ],
@@ -33,21 +29,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    RouterModule,
+    // AppRoutingModule,
     BrowserAnimationsModule
   ],
-  
   exports: [
     // KebapTopNormalPipe,
-    GetMoviesComponent,
+    // GetMoviesComponent,
     HeaderComponent,
+    BrowserAnimationsModule,
     SearchComponent,
     SearchResultComponent,
     MessageComponent,
     MessageAnimationDirective,
-    AppRoutingModule,
-    KebapTopNormalPipe,
-    HomeComponent,
+    // PaginationComponent,
+    // AppRoutingModule,
+    // KebapTopNormalPipe,
+    // HomeComponent,
+    RouterModule
   ],
 })
 

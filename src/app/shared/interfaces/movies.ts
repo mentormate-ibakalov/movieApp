@@ -1,5 +1,5 @@
 
-class Results {
+export class Movie {
     "vote_count": number;
     "id": number;
     "video": boolean;
@@ -16,10 +16,10 @@ class Results {
     "release_date": string
 }
 
-export class Movies<Object> {
+export class Movies {
     "page": number;
     "title"?: string;
     "total_results": number;
     "total_pages": number;
-    "results": Results[];
+    "results": Movie[];
 }

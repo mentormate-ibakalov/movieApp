@@ -1,4 +1,4 @@
-export class userObject {
+export class User {
     "name": string;
     "surname": string;
     "phone"?: number;

@@ -1,9 +1,8 @@
-import { SITEURLS } from '@shared/siteUrls';
-import { MessageService } from '@shared/services/message.service';
+import { SITEURLS } from '@shared/site-urls.config';
+import { MessageService, AuthService } from '@shared/services';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { LoginObject } from '@shared/interfaces/loginObj';
-import { AuthService } from '@shared/services/auth.service';
+import { LoginObject } from '@shared/interfaces';
 import { Router } from '@angular/router';
 
 
@@ -31,27 +30,16 @@ export class LoginComponent implements OnInit {
       this.authService.userLogIn(loginObject).subscribe(
         res => {
           this.messageService.handleSuccess('Login successful');
-
-          localStorage.setItem('token', '4179bafbbdcdc6dca8c4bf02f199c74848fc045d');
-          localStorage.setItem('userDetails', JSON.stringify(res));
-
-          this.authService.setStatus(true);
           this.router.navigate(['user/details']);
-        },
-        err => {
-          this.messageService.handleError(err);
         }
       )
     }
   }
 
-  ngOnInit() {
-    let userName: FormControl = new FormControl(null, Validators.required);
-    let userPass: FormControl = new FormControl(null, Validators.required);
+  ngOnInit():void {
     this.loginForm = new FormGroup({
-      userName: userName,
-      userPass: userPass
+      userName: new FormControl(null, Validators.required),
+      userPass: new FormControl(null, Validators.required)
     });
   }
-
 }

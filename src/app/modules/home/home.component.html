@@ -1,0 +1,17 @@
+<h1 class="text-uppercase text-center text-bold text-primary">film database</h1>
+<!-- <div [hidden]="!(searchResult$ | async)">
+    <app-get-movies [checkLoggedIn]="checkLoggedIn" [movie]="searchResult$ | async" (id)="addFavorite($event)"></app-get-movies>
+</div>
+
+<div [hidden]="(searchResult$ | async)" *ngFor="let movie$ of movies ">
+    <app-get-movies [checkLoggedIn]="checkLoggedIn" [movie]="movie$ | async" (id)="addFavorite($event)"></app-get-movies>
+</div> -->
+
+
+<div *ngIf="(searchResult$ | async) as searchResult">
+    <app-get-movies [checkLoggedIn]="checkLoggedIn" [movie]="searchResult" (id)="addFavorite($event)"></app-get-movies>
+</div>
+
+<div [hidden]="(searchResult$ | async)" *ngFor="let movie$ of movies ">
+    <app-get-movies [checkLoggedIn]="checkLoggedIn" [movie]="movie$ | async" (id)="addFavorite($event)"></app-get-movies>
+</div>

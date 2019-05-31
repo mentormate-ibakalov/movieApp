@@ -1,8 +1,7 @@
-import { GetMoviesService } from '@shared/services/get-movies.service';
-// import { FavoriteMoviesService } from './favorite-movies.service';
+import { MoviesService } from '@shared/services';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SITEURLS } from '@shared/siteUrls';
+import { SITEURLS } from '@shared/site-urls.config';
 
 
 @Component({
@@ -11,16 +10,15 @@ import { SITEURLS } from '@shared/siteUrls';
   styleUrls: ['./favorite-movies.component.scss']
 })
 export class FavoriteMoviesComponent implements OnInit {
-
   constructor(
-    private getMoviesService: GetMoviesService
+    private moviesService: MoviesService
   ) { }
   
   movies$: Observable<object>;
   siteUrls = SITEURLS;
 
   ngOnInit() {
-    this.movies$ = this.getMoviesService.getFavoriteMovies();
+    this.movies$ = this.moviesService.getFavoriteMovies();
   }
 
 }
