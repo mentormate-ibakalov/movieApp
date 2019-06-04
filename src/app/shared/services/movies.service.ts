@@ -4,11 +4,11 @@ import { SingleMovie } from '@shared/interfaces/singleMovie';
 import { Movies } from '@shared/interfaces/movies';
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject, BehaviorSubject } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { PostResponses } from '@shared/interfaces/postResponses';
-import { errorHandler } from '@angular/platform-browser/src/browser';
+// import { errorHandler } from '@angular/platform-browser/src/browser';
 
 
 @Injectable({
@@ -64,6 +64,7 @@ export class MoviesService {
       if (!term.trim()) {
         return of(null);
       }
+      
       allMovies = [ ... allMovies,  this.http.get<Movies>(this.formingApiUrlService.movies(term))
       .pipe(
         tap(obj => {
@@ -71,15 +72,14 @@ export class MoviesService {
           obj.title = term;
         }),
         catchError(err => {
-          this.messageService.handleError(`sidebar No ${ index + 1 } has't loaded correctly`);
-          console.log(err);
+          // this.messageService.handleError(`sidebar No ${ index + 1 } has't loaded correctly`);
+          // console.log(err);
           return allMovies[index];
       })
       )];
     });
     return allMovies;
   };
-  
 
   getMovie(id?: number): Observable<SingleMovie> {
     return this.http.get<SingleMovie>(this.formingApiUrlService.singleMovie(id)).pipe(

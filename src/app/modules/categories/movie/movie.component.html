@@ -1,3 +1,4 @@
+<!-- <h1 class="ss">blq</h1> -->
 <div *ngIf="(movie$ | async) as movie">
     <div id="single-movie" class="movies-side-bar clearfix">
         <div class="col-md-4">
@@ -5,7 +6,6 @@
         </div>
         <div class="col-md-8">
             <h2 class="text-left">
-                <!-- <span class="grey-color">(original title)</span> -->
                 <span class="text-uppercase text-bold text-primary"> {{ movie?.original_title }}</span>
             </h2>
             <p>

@@ -1,17 +1,15 @@
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http'
-import { UserHeader } from '@shared/providers/app.user-header';
-import { SharedModule } from '@shared/shared.module';
-
-
-
+import { AppRoutingModule } from "./app-routing.module";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { UserHeader } from "@shared/providers/app.user-header";
+import { SharedModule } from "@shared/shared.module";
+// import { Action } from '@ngrx/store';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     // RoutingComponents,
     // SearchComponent,
     // SearchResultComponent,s
@@ -24,17 +22,15 @@ import { SharedModule } from '@shared/shared.module';
     SharedModule,
     // BrowserAnimationsModule
     // HomeModule
-    AppRoutingModule,
+    AppRoutingModule
     // HttpClientModule,
     // FormsModule,
   ],
-  providers: [ 
-    { provide: HTTP_INTERCEPTORS, useClass: UserHeader, multi: true },
-    // { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true } 
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: UserHeader, multi: true }
+    // { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ],
   exports: [AppRoutingModule],
   bootstrap: [AppComponent]
 })
-
-
-export class AppModule { }
+export class AppModule {}
